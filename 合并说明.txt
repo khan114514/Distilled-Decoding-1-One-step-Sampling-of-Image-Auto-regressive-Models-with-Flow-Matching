@@ -1,0 +1,23 @@
+DD 完整提交包：下载与合并
+
+三个分卷由已质检 ZIP 按原始字节直接切分，必须全部下载到同一目录：
+DD_complete.zip.001
+DD_complete.zip.002
+DD_complete.zip.003
+
+macOS / Linux：在分卷所在目录执行
+cat DD_complete.zip.001 DD_complete.zip.002 DD_complete.zip.003 > DD_complete.zip
+
+Windows：在分卷所在目录打开命令提示符（cmd）执行
+copy /b DD_complete.zip.001+DD_complete.zip.002+DD_complete.zip.003 DD_complete.zip
+
+请合并后再用 ZIP 解压工具打开 DD_complete.zip，勿单独解压分卷。
+
+合并后文件大小：5,646,534,682 字节
+合并后 SHA256：4f3ed4b5164bfd052d9e699da6b47726450fe1cd0dac3af65896732295ebb096
+
+macOS 校验：shasum -a 256 DD_complete.zip
+Linux 校验：sha256sum DD_complete.zip
+Windows 校验：certutil -hashfile DD_complete.zip SHA256
+
+SHA256SUMS.txt 同时记录各分卷与原 ZIP 校验值。
